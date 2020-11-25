@@ -53,5 +53,4 @@
                         }
                       }
                     }
-                 localStorage.setItem("zawli",newElement.inputValue);
-                 document.write(localStorage.zawli);
+                 
