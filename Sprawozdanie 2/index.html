@@ -3,76 +3,9 @@
         <head>
             <meta charset="UTF-8">
             <title>Lista</title>
-            <script>
-                
-                function setCookie(cname, cvalue, exdays) {
-                var d = new Date();
-                d.setTime(d.getTime() + (exdays*24*60*60*1000));
-                var expires = "expires="+ d.toUTCString();
-                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-
-                
-                // Tworzymy przycisk zamkinij dla kazdego elementu listy
-                     var myNodelist = document.getElementsByTagName("LI");
-                    var i;
-                    for (i = 0; i < myNodelist.length; i++) {
-                      var span = document.createElement("SPAN");
-                      var txt = document.createTextNode("\u00D7");
-                      span.className = "close";
-                      span.appendChild(txt);
-                      myNodelist[i].appendChild(span);
-                    }
-                    
-                    // Klikajac zamknij usuwa wybrany element
-                    var close = document.getElementsByClassName("close");
-                    var i;
-                    for (i = 0; i < close.length; i++) {
-                      close[i].onclick = function() {
-                        var div = this.parentElement;
-                        div.style.display = "none";
-                      }
-                    }
-                    
-                    
-                    var list = document.querySelector('ul');
-                    list.addEventListener('click', function(ev) {
-                      if (ev.target.tagName === 'LI') {
-                        ev.target.classList.toggle('checked');
-                      }
-                    }, false);
-                    
-                   //Torzymy nowy element listy
-                    function newElement() {
-                      var li = document.createElement("li");
-                      var inputValue = document.getElementById("myInput").value;
-                      var t = document.createTextNode(inputValue);
-                      li.appendChild(t);
-                      if (inputValue === '') {
-                        alert("Nie może być puste!");
-                      } else {
-                        document.getElementById("myUL").appendChild(li);
-                      }
-                      document.getElementById("myInput").value = "";
-                    
-                      var span = document.createElement("SPAN");
-                      var txt = document.createTextNode("\u00D7");
-                      span.className = "close";
-                      span.appendChild(txt);
-                      li.appendChild(span);
-                    
-                      for (i = 0; i < close.length; i++) {
-                        close[i].onclick = function() {
-                          var div = this.parentElement;
-                          div.style.display = "none";
-                        }
-                      }
-                    }
-                    
-            </script>
+            <script src="skrypt.js"></script>
         </head>
-        <body onload="setCookie('O',myUL,7);">
+        <body>
         <div id="myDIV" class="header">
         <h2>Moja lista</h2>
         <input type="text" id="myInput">
