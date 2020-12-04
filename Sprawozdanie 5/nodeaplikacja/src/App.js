@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import List from './Lista';
 import withListLoading from './withListLoading';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Head from "./Head";
 function App() {
   const ListLoading = withListLoading(List);
   const [appState, setAppState] = useState({
@@ -20,9 +22,12 @@ function App() {
   }, [setAppState]);
   return (
     <div className='App'>
+      <Router>
       <div className='container'>
         <h1>Lista</h1>
+        <Route path='/Head.js' component={Head} />
       </div>
+      </Router>
       <div className='repo-container'>
         <ListLoading isLoading={appState.loading} repos={appState.repos} />
       </div>

@@ -8,8 +8,8 @@ const List = (props) => {
       {repos.map((repo) => {
         return (
           <li key={repo.id} className='list'>
-            <span className='repo-text'>{repo.name} </span>
-            <span className='repo-description'>{repo.description}</span>
+            <span className='repo-text'>{repo} </span>
+            <span className='repo-description'>{repo}</span>
           </li>
         );
       })}
